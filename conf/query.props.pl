@@ -519,7 +519,7 @@ start with parent_id is null
     item => {
       ts_usage_pct => {
         query => q{
-            select tablespace_name ts, round(used_percent, 5) pct
+            select tablespace_name ts, replace(round(used_percent, 5),',','.') pct 
             from dba_tablespace_usage_metrics
         },
         keys => { TS => 'PCT' }
