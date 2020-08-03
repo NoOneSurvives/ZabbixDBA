@@ -16,9 +16,9 @@ RUN apt install -y $MAIN
 #####
 WORKDIR /opt/oracle
 RUN apt-get install -y $ORAPART \
-     && wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip \
-	 && wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-sqlplus-linuxx64.zip \
-	 && wget https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip \
+     && wget --no-check-certificate https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip \
+	 && wget --no-check-certificate https://download.oracle.com/otn_software/linux/instantclient/instantclient-sqlplus-linuxx64.zip \
+	 && wget --no-check-certificate https://download.oracle.com/otn_software/linux/instantclient/19800/instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip \
      && unzip instantclient-basiclite-linuxx64.zip && unzip instantclient-sqlplus-linuxx64.zip && unzip instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip \
      && rm -f instantclient-basiclite-linuxx64.zip instantclient-sqlplus-linuxx64.zip instantclient-sdk-linux.x64-19.8.0.0.0dbru.zip\
      && cd /opt/oracle/instantclient_19_8 \
