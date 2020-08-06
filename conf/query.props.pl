@@ -60,6 +60,12 @@
         where name = 'consistent gets'
     },
   },
+  dbfilesize => {
+    query => q{
+        select round((sum(bytes)/1048576/1024),2)
+		from gv$datafile
+    },
+  },
   dbphysicalreads => {
     query => q{
         select sum (value)
